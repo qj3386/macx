@@ -1,0 +1,1 @@
+document.write('<div style="width:300px;height:300px;"><a href="https://am222566.com/?agent=pagzgg2080" target="_blank"><img width="300px" height="300px" src="http://www.bbvdd.com/d/20191211151002u5a.gif"></a></div>');

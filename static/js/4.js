@@ -1,0 +1,17 @@
+var _ifr_62_pop={"id":62,"fid":1,"url":"http:\/\/df.s77777777.com:8118\/fa13.html","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/201912032134436cg.gif","pic2":"","width":"980","height":"60"};
+var _ifr_63_pop={"id":63,"fid":1,"url":"https:\/\/download.775363.com:8443\/download?agentCode=25276810","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/201910231506352s8.gif","pic2":"","width":"980","height":"60"};
+var _ifr_64_pop={"id":64,"fid":1,"url":"http:\/\/23.225.133.119\/avscj002.htm","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20190403161622zyv.gif","pic2":"","width":"980","height":"60"};
+var _ifr_65_pop={"id":65,"fid":1,"url":"http:\/\/7799.g77776666.com:8200\/cs37.html","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/201908011755590nm.gif","pic2":"","width":"980","height":"60"};
+var _ifr_66_pop={"id":66,"fid":1,"url":"http:\/\/ttsstz.com\/?bibi","url2":"","pic1":"http:\/\/cbu01.alicdn.com\/img\/ibank\/2018\/273\/940\/8576049372_872274545.jpg","pic2":"","width":"980","height":"60"};
+var _ifr_67_pop={"id":67,"fid":1,"url":"","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/2019081120592993g.gif","pic2":"","width":"980","height":"60"};
+var _ifr_68_pop={"id":68,"fid":1,"url":"http:\/\/www.142905.com\/99av3.html","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20190102145355u4t.gif","pic2":"","width":"980","height":"60"};
+var _ifr_69_pop={"id":69,"fid":1,"url":"http:\/\/103.214.164.43\/xcl666.htm","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20190425232138x57.gif","pic2":"","width":"980","height":"60"};
+var _ifr_70_pop={"id":70,"fid":1,"url":"","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20191227150331yve.gif","pic2":"","width":"980","height":"60"};
+var _ifr_73_pop={"id":73,"fid":1,"url":"http:\/\/www.uuk78.com","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20190425232557wni.gif","pic2":"","width":"980","height":"60"};
+var _ifr_74_pop={"id":74,"fid":1,"url":"http:\/\/vip.988340.com:966\/66211.html","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20191111172054c3e.gif","pic2":"","width":"600","height":"90"};
+var _ifr_75_pop={"id":75,"fid":2,"url":"http:\/\/pai.597606.com:606\/27821045.html","url2":"https:\/\/916077.com\/?agent=pagzgg1111","pic1":"http:\/\/www.bbvdd.com\/d\/201912191431434bm.gif","pic2":"http:\/\/www.bbvdd.com\/d\/20200511160500iwx.gif","width":"120","height":"270"};
+var _ifr_346_pop={"id":346,"fid":1,"url":"http:\/\/488.g88885555.com:8200\/wy24.html","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20200302175926bvw.gif","pic2":"","width":"605","height":"60"};
+var _ifr_348_pop={"id":348,"fid":1,"url":"","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20200108154856p5b.gif","pic2":"","width":"605","height":"60"};
+var _ifr_353_pop={"id":353,"fid":1,"url":"","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20200217212535ljl.gif","pic2":"","width":"605","height":"60"};
+var _ifr_357_pop={"id":357,"fid":1,"url":"","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20190705145332nnt.gif","pic2":"","width":"605","height":"60"};
+var _ifr_358_pop={"id":358,"fid":6,"url":"https:\/\/am222566.com\/?agent=pagzgg2080","url2":"","pic1":"http:\/\/www.bbvdd.com\/d\/20191211151002u5a.gif","pic2":"","width":"300","height":"300"};

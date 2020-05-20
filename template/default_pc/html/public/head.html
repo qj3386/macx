@@ -1,0 +1,35 @@
+<div id="head">
+	<div class="logo">
+		<a href="{$maccms.path}"><img src="{$maccms.path}{$maccms.site_logo}" width="350" height="80" /></a>
+	</div>
+	<div class="subvs"><script type="text/javascript">show(74);</script></div>
+	<div class="clear"></div>
+	<div id="allmenu">
+		<div class="nav">
+			<div class="search">
+				<form id="search" name="search" method="get" action="{:mac_url('vod/search')}">
+					<input type="text" name="wd" id="wd" class="s_text" onclick="if(this.value=='请输入检索的关键词')this.value=''" value="请输入检索的关键词">
+					<input type="submit" value="搜索" class="s_ton" id="s_ton">
+				</form>
+			</div>
+			<ul id="nav" class="superfish">
+				<li class="{if condition="$maccms.aid eq 1"}active{/if}"><a class="{if condition="$maccms.aid eq 1"}navbar-brand{/if}" href="{$maccms.path}">首页</a></li>
+				{maccms:type ids="parent" order="asc" by="sort" num="4"}
+				<li><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+				{/maccms:type}
+			</ul>
+		</div>
+		<div class="rndmenu">
+			<div id="submenu" style="display:block;">
+				<ul class="pinx plast"><li>类型：</li>{maccms:type start="5" ids="parent" order="asc" by="sort" num="8"}<li><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>{/maccms:type}</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="box" style="margin:5px auto;">
+	<div id="url">
+		<script type="text/javascript">show(61);</script>
+		<script type="text/javascript">show(69);</script>
+		<script type="text/javascript">show(70);</script>
+	</div>
+</div>

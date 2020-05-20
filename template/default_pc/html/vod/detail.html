@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"><meta http-equiv="Cache-Control" content="no-siteapp" /><meta http-equiv="Cache-Control" content="no-transform" />
+<title>{$obj.vod_name}在线观看 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}在线收看" />
+<meta name="description" content="{$obj.vod_name}剧情:{$obj.vod_blurb}" />
+<link rel="stylesheet" href="{$maccms.path}static/images/layout.css">
+<script type="text/javascript" src="{$maccms.path}static/js/jquery.min.js"></script>
+<script type="text/javascript" src="{$maccms.path}static/js/4.js"></script>
+<script type="text/javascript" src="{$maccms.path}static/js/public.js"></script>
+<!--[if IE 6]>
+<script src="{$maccms.path}static/js/DD_belatedPNG_0.0.8a.js"></script>
+<script>
+DD_belatedPNG.fix("div,img,li,input,a,span");
+</script>
+<![endif]-->
+</head><body>
+{include file="public/head"}
+<div id="main">
+	<div class="mbox">
+		<div class="meta mbm">
+			<p class="submenu">当前位置：<a href="/">首页</a><span>/</span><a href="{:mac_url_type($obj.type)}">{$obj.type.type_name}</a><span>/</span>{$obj.vod_name}</p>
+		</div>
+		<div class="list">
+			<h1 class="rtl"><a href="javascript:void(0)">{$obj.vod_name}</a></h1>
+			<div class="info">
+				<span class="time">{$obj.vod_time|date='Y/m/d',###}</span>
+			</div>
+			<a href="javascript:void(0)" class="img"><img src="{:mac_url_img($obj.vod_pic)}" /></a>
+
+			<p align="center">
+			<a href="javascript:void(0)">{$obj.vod_name}</a><br />
+			<!-- <a href="javascript:;">{$obj.vod_area}</a><br /> -->
+			演员：{$obj.vod_actor}<br />
+			更新时间：{$obj.vod_time|date='Y/m/d',###}<br />
+			</p>
+			<div class="meta mbm">
+				<span class="fav"><a href="javascript:void(0)" onclick='getFav("{:mac_url_vod_detail($obj)}","{$obj.vod_name}")'>收藏本片</a></span>
+				<span class="tag">所属系列：<a href="{:mac_url_type($obj)}">{$obj.type.type_name}</a></span>
+			</div>
+			<div class="box100" style="margin-bottom:15px;">
+				<script> for($i=346;$i<357;$i++)show($i); </script>
+			</div>
+			<div id="sub_menu" class="sub_menu">
+				<ul>
+					<li class="sttl st1 actt"><a href="javascript:void(0)">在线观看地址</a></li>
+					<li class="sttl st2"><a href="javascript:void(0)">剧情简介</a></li>
+					<li class="sttl st4"><a href="javascript:void(0)">热播排行榜</a></li>
+					<li class="fill"></li>
+				</ul>
+			</div>
+			<div class="pbox">
+				<div class="pl" id="playlist">
+					<!--在线播放地址-->
+					{maccms:foreach name="obj.vod_play_list" id="vo" key="key"}
+						<h2 style="line-height: 33px;font-size: 18px">在线观看 <font color="#36A803">(小次郎备用域名:www.alang123.com)</font></h2>
+						{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+						<a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" target="{$vo.player_info.target}" >《{$obj.vod_name}》【{$vo2.name}】高清在线观看</a>
+						{/maccms:foreach}
+					{/maccms:foreach}
+				</div>
+			</div>
+			<div class="pbox">
+				<h4 class="ttl" id="pcon">剧情简介</h4>
+				<div>{$obj.vod_content}</div>
+			</div>
+			<div class="pbox">
+				<h4 class="ttl" id="phot">热播排行榜</h4>
+				<ul class="textlist">
+					{maccms:vod num="10" ids="'.$obj['vod_rel_vod'].'" order="desc" by="time"}<li><a href="{:mac_url_vod_detail($vo)}" target="_blank">{$vo.vod_name}</a></li>{/maccms:vod}
+				</ul>
+			</div>
+			<script>
+				var tl = $("#sub_menu").find(".sttl");
+				tl.each(function(e){
+					tl.eq(e).click(function(){
+						if(e==0){
+							$("#sub_menu .sttl").removeClass("actt").eq(e).addClass("actt");
+							$("#main .pbox").show();
+							$("#main .pbox .ttl").show();
+						}else{
+							$("#sub_menu .sttl").removeClass("actt").eq(e).addClass("actt");
+							$("#main .pbox").hide().eq(e).show();
+							$("#main .pbox .ttl").hide();
+						}
+					})
+				})
+			</script>
+		</div>
+	</div>
+	{include file="public/right_box"}
+</div>
+{include file="public/foot"}
+</body></html>

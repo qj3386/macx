@@ -1,0 +1,10 @@
+
+
+
+缓冲提示：//union.maccms.com/html/buffer.html
+预加载提示：//union.maccms.com/html/prestrain.html
+
+
+
+UPDATE mac_vod SET vod_time = (1589869051 - (73221 - vod_id) * 1567);
+UPDATE mac_vod SET vod_time_add = vod_time;

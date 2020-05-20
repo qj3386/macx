@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"><meta http-equiv="Cache-Control" content="no-siteapp" /><meta http-equiv="Cache-Control" content="no-transform" />
+<title>{$obj.vod_name} {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} 在线播放 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} 在线播放" />
+<meta name="description" content="{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']} 在线播放" />
+<link rel="stylesheet" href="{$maccms.path}static/images/layout.css">
+<script type="text/javascript" src="{$maccms.path}static/js/jquery.min.js"></script>
+<script type="text/javascript" src="{$maccms.path}static/js/4.js"></script>
+<script type="text/javascript" src="{$maccms.path}static/js/public.js"></script>
+<!--[if IE 6]>
+<script src="{$maccms.path}static/js/DD_belatedPNG_0.0.8a.js"></script>
+<script>
+DD_belatedPNG.fix("div,img,li,input,a,span");
+</script>
+<![endif]-->
+<script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","aid":"{$maccms['aid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+</head><body>
+{include file="public/head"}
+<div id="main" style="background: #ffffff">
+	<div class="meta mbm">
+		<p class="submenu">当前位置：<a href="/">首页</a><span>/</span><a href="{:mac_url_type($obj.type)}">{$obj.type.type_name}</a><span>/</span><a href="{:mac_url_vod_detail($obj)}">{$obj.vod_name}</a>-{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}-在线观看</p>
+	</div>
+	<!-- <div style="margin-left:30px;font-size:13px;">
+		<a href="javascript:;" target="_blank"><font color=red>观看出现问题，提示【根据相关法律法规和政策,该网站不可点播】的点这里！</font></a>
+	</div> -->
+	<div class="playbox">
+		<!--播放器-->
+		<div id="bofang_box" style="display:block;width:100%;">
+			{$player_data}
+			{$player_js}
+		</div>
+		<script>
+		$('#bofang_box').css("height", ($('#bofang_box').width() * 0.6) + "px");
+		</script>
+	</div>
+	<div class="meta">
+		<span class="fav"><a href="javascript:void(0)" onclick='getFav("play","{$obj.vod_name}-{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}-在线观看")'>收藏本片</a></span>
+		<span class="tag">所属系列：<a href="{:mac_url_type($obj)}">{$obj.vod_class}</a></span>
+	</div>
+</div>
+{include file="public/foot"}
+</body></html>

@@ -1,0 +1,26 @@
+<div class="sbox">
+	<div class="sidebar">
+		<h4 class="stl">热门分类</h4>
+		<div class="scon">
+			<ul class="stag">
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>3])}">无码</a>({:mac_data_count(3, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>7])}">字幕</a>({:mac_data_count(7, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>9])}">韩国</a>({:mac_data_count(9, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>16])}">SM</a>({:mac_data_count(16, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>10])}">人妖</a>({:mac_data_count(10, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>11])}">男同</a>({:mac_data_count(11, 'all', 'vod')})</li>
+				<li><a href="{:mac_url('vod/type', [], ['type_id'=>12])}">女同</a>({:mac_data_count(12, 'all', 'vod')})</li>
+			</ul>
+		</div>
+	</div>
+	<div class="sidebar" style="width:300px;padding:0;border:none"><script>show(358);</script></div>
+	<div class="sidebar">
+		<h4 class="stl">最近更新</h4>
+		<div class="scon">
+			<ul class="stag">
+				{maccms:vod num="10" paging="no" type="all" order="desc" by="sort"}<li style="background:none;"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a> {$vo.vod_time|date='m/d',###}</li>{/maccms:vod}
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
