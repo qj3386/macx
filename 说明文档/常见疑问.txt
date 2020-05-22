@@ -1,0 +1,47 @@
+1，由于采用最新的TP框架，所以php版本建议5.6以上，上传文件时需要开启fileinfo支持库，php.ini里 extension=php_fileinfo.dll ；宝塔等面板里直接安装开启 。
+#
+2，如果使用的是php5.6版本（php7版本不受影响），还需要设置php.ini开启always_populate_raw_post_data = -1 这个选项，也就是去掉这项配置前面的分号即可。
+#
+3，运行安装页面出现空白页面，该情况一般为Runtime目录没有修改写入权限**
+#
+4，SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column '' at row 1  或者 Warning: 1265 Data truncated for column 类似错误**
+RE:############################################
+该错误就插入字段长度超过设定的长度，一般程序会在数据库字段设置字符长度在插入之前程序很少会先判断数据长度和截取数据 这样会影响性能，所以你就需要修改你数据库的配置文件一般在MYSQL 安装目录中的my.ini中 搜索sql-mode
+sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+ 把其中的STRICT_TRANS_TABLES,去掉 建议使用该方法
+sql-mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+或者把
+sql-mode="STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" 直接删除
+############################################
+#
+5，数据库连接配置文件。
+RE:手动修改数据库连接信息，数据库密码等/application/database.php
+#
+6，重新安装程序删除install.lock。
+RE:需要删除/application/data/install/install.lock
+#
+7，采集联盟资源库或其他资源库为何播放不了？（资源类型是youku、tudou、iqiyi等等）第三方网址
+RE:方法1，整合资源站的播放器js文件。方案2，开启全局解析或独立解析和播放器解析状态。
+#
+8，宝塔Nginx环境下，程序安装完毕后除非首页其他页面全部404的问题？
+RE:方法，进入宝塔软件设置，找到对应的php版本-设置，安装扩展，找到PATH_INFO这项，点击关闭，然后重新安装一下就ok了，这个可能是宝塔的bug。
+#
+9，采集完数据后为何无法播放？？？
+RE:检查采集数据的播放地址，如果是完成的http地址，则需要开启播放器的解析状态用解析播放；如果采集的数据ID可会直接用本地播放器来播放。
+#
+10，为何新增加了分类，前台页面进入提示没有权限？？？
+RE:因为新加的分类默认所有会员组都是没有权限的，需要进入会员组里配置每个组的分类权限，保存一下即可。
+#
+11，路由规则改错了，页面权都打不开了，怎么恢复到默认的？？？
+RE:下载完整安装包，复制application/route.php 替换到网站里，就可以打开了，然后在后台重新修改下路由规则。
+#
+12，nginx下除了首页其他都是404怎么办？
+RE:修改一下伪静态规则，一般都可以解决了。 如果修改了后台文件入口admin.php，则改为对应的文件名。
+ if (!-e $request_filename) {
+        rewrite ^/index.php(.*)$ /index.php?s=$1 last;
+        rewrite ^/admin.php(.*)$ /admin.php?s=$1 last;
+        rewrite ^/api.php(.*)$ /api.php?s=$1 last;
+        rewrite ^(.*)$ /index.php?s=$1 last;
+        break;
+        }
+#

@@ -8,3 +8,14 @@
 
 UPDATE mac_vod SET vod_time = (1589869051 - (73221 - vod_id) * 1567);
 UPDATE mac_vod SET vod_time_add = vod_time;
+
+
+
+
+
+
+
+
+
+
+

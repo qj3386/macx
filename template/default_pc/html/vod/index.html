@@ -1,8 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<!DOCTYPE html><html lang="zh-cn"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"><meta http-equiv="Cache-Control" content="no-siteapp" /><meta http-equiv="Cache-Control" content="no-transform" />
+<meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
 <title>{$maccms.site_name}</title>
 <meta name="keywords" content="{$maccms.site_keywords}" />
 <meta name="description" content="{$maccms.site_description}" />
@@ -10,12 +8,6 @@
 <script type="text/javascript" src="{$maccms.path}static/js/jquery.min.js"></script>
 <script type="text/javascript" src="{$maccms.path}static/js/4.js"></script>
 <script type="text/javascript" src="{$maccms.path}static/js/public.js"></script>
-<!--[if IE 6]>
-<script src="{$maccms.path}static/js/DD_belatedPNG_0.0.8a.js"></script>
-<script>
-DD_belatedPNG.fix("div,img,li,input,a,span");
-</script>
-<![endif]-->
 </head><body>
 {include file="public/head"}
 <div id="main">
@@ -34,7 +26,7 @@ DD_belatedPNG.fix("div,img,li,input,a,span");
 			<p class="pur"><a href="javascript:void(0)" onclick="getFav()">【立刻加入收藏夹】</a></p>
 		</div>
 
-		{maccms:vod num="1" order="desc" by="time"}
+		{maccms:vod num="15" order="desc" by="time" paging="yes" pageurl="vod/search" half="3"}
 		<div class="list">
 			<h4 class="rtl"><a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
 			<div class="info">
@@ -55,31 +47,7 @@ DD_belatedPNG.fix("div,img,li,input,a,span");
 				<span class="tag">所属系列：<a href="{:mac_url_type($vo)}">{$vo.type.type_name}</a></span>
 			</div>
 		</div>
-		{/maccms:vod}
-
-		<div class="box100" style="margin-bottom:40px;"><script>for(var g=346;g<357;g++)show(g);</script></div>
-
-		{maccms:vod num="15" start="1" order="desc" by="time" paging="yes" pageurl="vod/search" half="3"}
-		<div class="list">
-			<h4 class="rtl"><a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
-			<div class="info">
-				<span class="time">{$vo.vod_time|date='Y/m/d',###}</span>
-			</div>
-			<a href="{:mac_url_vod_detail($vo)}" class="img" target="_blank" title="{$vo.vod_name}"><img src="{:mac_url_img($vo.vod_pic)}" /></a>
-			<p align="center">
-			<a href="{:mac_url_vod_detail($vo)}" target="_blank" title="{$vo.vod_name}">{$vo.vod_name}</a><br />
-			<!-- <a href="javascript:;">{$vo.vod_area}</a><br /> -->
-			演员：{$vo.vod_actor}<br />
-			更新时间：{$vo.vod_time|date='Y/m/d',###}<br />
-			</p>
-			<p align="center">
-			<a href="{:mac_url_vod_detail($vo)}" target="_blank" class="more">[查看详细]</a>
-			</p>
-			<div class="meta">
-				<span class="fav"><a href="javascript:void(0)" onclick='getFav("{:mac_url_vod_detail($vo)}","{$vo.vod_name}")'>收藏本片</a></span>
-				<span class="tag">所属系列：<a href="{:mac_url_type($vo)}">{$vo.type.type_name}</a></span>
-			</div>
-		</div>
+		<?php if ($key == 1) { ?><div class="box100" style="margin-bottom:40px;"><script>for(var g=346;g<357;g++)show(g);</script></div><?php } ?>
 		{/maccms:vod}
 		<!-- 分页 -->
 		<div class="ui-bar list-page fn-clear">

@@ -1,0 +1,24 @@
+1.查询数据
+SELECT * FROM {pre}vod   查询所有数据
+SELECT * FROM {pre}vod WHERE vod_id=1000   查询指定ID数据
+2.删除数据
+DELETE  FROM {pre}vod   删除所有数据
+DELETE  FROM {pre}vod WHERE vod_id=1000   删除指定的第几条数据
+DELETE  FROM {pre}vod WHERE vod_actor LIKE '%刘德华%'   删除vod_actor字段里有"刘德华"的数据
+DELETE  FROM {pre}vod WHERE vod_type=1   删除指定的分类ID的数据
+DELETE  FROM {pre}vod WHERE vod_area LIKE '%台湾%'   删除指定地区的数据
+DELETE  FROM {pre}vod WHERE vod_lang LIKE '%粤语%'  删除指定语言的数据
+3.修改数据
+UPDATE {pre}vod SET vod_hits=1   将所有vod_hits字段里的值修改成1
+UPDATE {pre}vod SET vod_hits=1 WHERE vod_id=1000  指定的第几条数据把vod_hits字段里的值修改成1
+4，把图片地址中的某个字符串替换为另外一个字符串
+UPDATE {pre}vod SET vod_pic=REPLACE(vod_pic, '原始字符串', '替换成其他字符串')
+5，删除数据库后自增ID重新从1开始
+PHP： truncate {pre}vod
+ASP： acc 用office打开数据库，删除数据后，压缩修复数据库即可。
+          或 ALTER TABLE {pre}vod ALTER COLUMN vod_id COUNTER (1, 1)
+          mssql用   TRUNCATE TABLE  {pre}vod
+6，删除数据库名称重复的数据
+DELETE FROM {pre}vod where vod_id not in ( SELECT vod_id FROM {pre}vod GROUP BY vod_name HAVING COUNT(*)>1)
+7，修复死锁的表
+REPAIR TABLE `{pre}art` ,`{pre}vod` ,`{pre}type` ,`{pre}comment` ,`{pre}gbook` ,`{pre}link` ,`{pre}admin` ,`{pre}topic` ,`{pre}user` ,`{pre}card` ,`{pre}group` ,`{pre}visit`
